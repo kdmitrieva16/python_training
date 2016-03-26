@@ -11,6 +11,7 @@ class Application:
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
 
+
     def is_valid(self):
         try:
             self.wd.current_url
@@ -24,13 +25,13 @@ class Application:
 
     def return_to_home_page(self):
         wd = self.wd
-        if not (len(wd.find_elements_by_name("searchstring"))>0):
-            wd.find_element_by_link_text("home page").click()
+        wd.find_element_by_link_text("home page").click()
 
     def go_to_home_page(self):
         wd = self.wd
         if not (len(wd.find_elements_by_name("searchstring"))>0):
             wd.find_element_by_link_text("home").click()
+
 
     def destroy(self):
         self.wd.quit()

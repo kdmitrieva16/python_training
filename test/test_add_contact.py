@@ -8,7 +8,7 @@ def test_add_new_contact(app):
                                      notes="sdfdgdfhdfhdfhfhjghjhgh", bday= "//div[@id='content']/form/select[1]//option[18]", bmonth="//div[@id='content']/form/select[2]//option[12]", byear= "1971",
                                      aday="//div[@id='content']/form/select[3]//option[11]",
                                      amonth="//div[@id='content']/form/select[4]//option[3]", ayear="1999"))
-        app.return_to_home_page()
+
 
 
 
