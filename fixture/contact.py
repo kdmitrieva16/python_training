@@ -1,3 +1,4 @@
+
 class ContactHelper:
 
     def __init__(self, app):
@@ -10,6 +11,7 @@ class ContactHelper:
         self.fill_contact_form(contact)
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        self.app.return_to_home_page()
 
     def fill_contact_form(self, contact):
         wd = self.app.wd
@@ -69,6 +71,7 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         #approve deletion
         wd.switch_to_alert().accept()
+        self.app.go_to_home_page()
 
     def select_first_contact(self):
         wd = self.app.wd
@@ -76,5 +79,5 @@ class ContactHelper:
 
     def count(self):
         wd = self.app.wd
-        self.app.open_home_page()
+        self.app.go_to_home_page()
         return len(wd.find_elements_by_name("selected[]"))
