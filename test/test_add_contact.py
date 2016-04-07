@@ -10,8 +10,8 @@ def test_add_new_contact(app):
                                      aday="//div[@id='content']/form/select[3]//option[11]",
                                      amonth="//div[@id='content']/form/select[4]//option[3]", ayear="1999")
     app.contact.add_new(contact)
+    assert len(old_contacts) + 1 == app.contact.count()
     new_contacts = app.contact.get_contact_list()
-    assert len(old_contacts) + 1 == len(new_contacts)
     old_contacts.append(contact)
     assert sorted(old_contacts, key=Contact.id_or_max)==sorted(new_contacts, key=Contact.id_or_max)
 
