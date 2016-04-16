@@ -1,14 +1,24 @@
 # -*- coding: utf-8 -*-
 from model.contact import Contact
+import pytest
+import random
+import string
 
-def test_add_new_contact(app):
+def random_string(prefix, maxlen):
+    symbols=string.ascii_letters + string.digits + string.punctuation + " "*10
+    return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
+
+testdata = [Contact(firstname="", middlename="", lastname="")]+[
+    Contact(firstname=random_string("firstname",20), middlename=random_string("middlename", 20),
+            lastname=random_string("lastname", 20), home_phone=random_string("home",10), work_phone=random_string("work",10),
+            mobile_phone=random_string("mobile",10))
+    for i in range(5)
+]
+
+@pytest.mark.parametrize("contact", testdata, ids=[repr(x)for x in testdata])
+
+def test_add_new_contact(app, contact):
     old_contacts = app.contact.get_contact_list()
-    contact =Contact(firstname="Tony", middlename="nnnn", lastname="Wendice", nickname="mmm", title="mhfgj", company="gfhfghfgs", address="dfgdg dg dgd.d hdhfh",
-                                     home_phone="111111111", mobile_phone="22222222222", work_phone="44545456575", fax="hhfjjjfjfjfjfj", email2="fjfjghjhjjf@ddfdfdf.fg",
-                                     email3="gdfgfdfhfhfgh", homepage="ffsfsdgddfgdfgdfgdgghj", address2="wewwrweetehfghgf", phone2="hghfhfhfhhfjuiuidf",
-                                     notes="sdfdgdfhdfhdfhfhjghjhgh", bday= "//div[@id='content']/form/select[1]//option[18]", bmonth="//div[@id='content']/form/select[2]//option[12]", byear= "1971",
-                                     aday="//div[@id='content']/form/select[3]//option[11]",
-                                     amonth="//div[@id='content']/form/select[4]//option[3]", ayear="1999")
     app.contact.add_new(contact)
     assert len(old_contacts) + 1 == app.contact.count()
     new_contacts = app.contact.get_contact_list()
