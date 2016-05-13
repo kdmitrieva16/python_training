@@ -1,6 +1,9 @@
 from model.contact import Contact
 from model.group import Group
 import re
+from selenium.webdriver.support.select import Select
+import random
+
 
 class ContactHelper:
 
@@ -185,35 +188,19 @@ class ContactHelper:
         phone2=re.search("P: (.*)", text).group(1)
         return Contact(home_phone=homephone, work_phone=workphone, mobile_phone=mobile, phone2=phone2)
 
-    def select_group_for_add_contact(self):
-        wd = self.app.wd
-        self.app.go_to_home_page()
-        dd_groups=wd.find_element_by_name("to_group")
-        for option in dd_groups.find_elements_by_tag_name('option'):
-            if option.text=='gggg hjhfsjdhf':
-                option.click()
 
 
-    def add_contact_into_selected_group(self, id):
-        wd = self.app.wd
-        self.select_group_for_add_contact()
-        self.select_contact_by_id(id)
-        wd.find_element_by_name("add").click()
-        wd.find_element_by_partial_link_text("group page").click()
-
-    def search_contact_by_group (self):
+    def search_contact_by_group (self,name):
         wd = self.app.wd
         self.app.go_to_home_page()
         dd_groups=wd.find_element_by_xpath('//select[@name="group"]')
-        for option in dd_groups.find_elements_by_tag_name('option'):
-            if option.text=='gggg hjhfsjdhf':
-                option.click()
+        Select(dd_groups).select_by_visible_text('%s' % name)
 
 
 
     def delete_contact_from_selected_group(self, id):
         wd = self.app.wd
-        self.search_contact_by_group()
+        #self.search_contact_by_group(name)
         self.select_contact_by_id(id)
         wd.find_element_by_xpath('/html/body/div/div[4]/form[2]/div[2]/input').click()
         wd.switch_to_alert().accept()
@@ -233,3 +220,14 @@ class ContactHelper:
         return groups
 
 
+    def select_group_for_add_contact(self, name):
+        wd = self.app.wd
+        dd_groups=wd.find_element_by_name("to_group")
+        Select(dd_groups).select_by_visible_text('%s' % name)
+
+
+    def add_contact_into_selected_group(self, id):
+        wd = self.app.wd
+        self.select_contact_by_id(id)
+        wd.find_element_by_name("add").click()
+        wd.find_element_by_partial_link_text("group page").click()
