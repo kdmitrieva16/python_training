@@ -1,0 +1,86 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace C:\Users\Данил\.jenkins\jobs\addressbook_tests_bdd1\workspace
+Cloning the remote Git repository
+Cloning repository https://github.com/kdmitrieva16/python_training/
+ > C:\Users\Данил\AppData\Local\GitHub\PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0\cmd\git.exe init C:\Users\Данил\.jenkins\jobs\addressbook_tests_bdd1\workspace # timeout=10
+Fetching upstream changes from https://github.com/kdmitrieva16/python_training/
+ > C:\Users\Данил\AppData\Local\GitHub\PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0\cmd\git.exe --version # timeout=10
+ > C:\Users\Данил\AppData\Local\GitHub\PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0\cmd\git.exe -c core.askpass=true fetch --tags --progress https://github.com/kdmitrieva16/python_training/ +refs/heads/*:refs/remotes/origin/*
+ > C:\Users\Данил\AppData\Local\GitHub\PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0\cmd\git.exe config remote.origin.url https://github.com/kdmitrieva16/python_training/ # timeout=10
+ > C:\Users\Данил\AppData\Local\GitHub\PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0\cmd\git.exe config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Users\Данил\AppData\Local\GitHub\PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0\cmd\git.exe config remote.origin.url https://github.com/kdmitrieva16/python_training/ # timeout=10
+Fetching upstream changes from https://github.com/kdmitrieva16/python_training/
+ > C:\Users\Данил\AppData\Local\GitHub\PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0\cmd\git.exe -c core.askpass=true fetch --tags --progress https://github.com/kdmitrieva16/python_training/ +refs/heads/*:refs/remotes/origin/*
+ > C:\Users\Данил\AppData\Local\GitHub\PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0\cmd\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > C:\Users\Данил\AppData\Local\GitHub\PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0\cmd\git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision c8b59e7e0f0a687063701742be54a4b676dc79e6 (refs/remotes/origin/master)
+ > C:\Users\Данил\AppData\Local\GitHub\PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0\cmd\git.exe config core.sparsecheckout # timeout=10
+ > C:\Users\Данил\AppData\Local\GitHub\PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0\cmd\git.exe checkout -f c8b59e7e0f0a687063701742be54a4b676dc79e6
+First time build. Skipping changelog.
+[workspace] $ cmd.exe /C "C:\Python35-32\python.exe C:\Users\Данил\.jenkins\shiningpanda\jobs\b01af1a2\virtualenv.py C:\Users\Данил\.jenkins\shiningpanda\jobs\b01af1a2\virtualenvs\d41d8cd9 && exit %%ERRORLEVEL%%"
+PYTHONHOME is set.  You *must* activate the virtualenv before using it
+Using base prefix 'C:\\Python35-32'
+New python executable in C:\Users\Данил\.jenkins\shiningpanda\jobs\b01af1a2\virtualenvs\d41d8cd9\Scripts\python.exe
+Installing setuptools, pip, wheel...done.
+[workspace] $ cmd.exe /c call C:\Users\486B~1\AppData\Local\Temp\shiningpanda235438059451651602.bat
+
+C:\Users\„ ­Ё«\.jenkins\jobs\addressbook_tests_bdd1\workspace>pip install -r requirements.txt 
+lxml-3.6.0-cp35-cp35m-win32.whl is not a supported wheel on this platform.
+You are using pip version 7.1.2, however version 8.1.2 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+C:\Users\„ ­Ё«\.jenkins\jobs\addressbook_tests_bdd1\workspace>py.test --alluredir allure-reports bdd\group_scenarios.py 
+Traceback (most recent call last):
+  File "c:\python35-32\lib\runpy.py", line 170, in _run_module_as_main
+    "__main__", mod_spec)
+  File "c:\python35-32\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Python35-32\Scripts\py.test.exe\__main__.py", line 9, in <module>
+  File "c:\python35-32\lib\site-packages\_pytest\config.py", line 39, in main
+    config = _prepareconfig(args, plugins)
+  File "c:\python35-32\lib\site-packages\_pytest\config.py", line 118, in _prepareconfig
+    pluginmanager=pluginmanager, args=args)
+  File "c:\python35-32\lib\site-packages\_pytest\vendored_packages\pluggy.py", line 724, in __call__
+    return self._hookexec(self, self._nonwrappers + self._wrappers, kwargs)
+  File "c:\python35-32\lib\site-packages\_pytest\vendored_packages\pluggy.py", line 338, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+  File "c:\python35-32\lib\site-packages\_pytest\vendored_packages\pluggy.py", line 333, in <lambda>
+    _MultiCall(methods, kwargs, hook.spec_opts).execute()
+  File "c:\python35-32\lib\site-packages\_pytest\vendored_packages\pluggy.py", line 595, in execute
+    return _wrapped_call(hook_impl.function(*args), self.execute)
+  File "c:\python35-32\lib\site-packages\_pytest\vendored_packages\pluggy.py", line 249, in _wrapped_call
+    wrap_controller.send(call_outcome)
+  File "c:\python35-32\lib\site-packages\_pytest\helpconfig.py", line 28, in pytest_cmdline_parse
+    config = outcome.get_result()
+  File "c:\python35-32\lib\site-packages\_pytest\vendored_packages\pluggy.py", line 278, in get_result
+    raise ex[1].with_traceback(ex[2])
+  File "c:\python35-32\lib\site-packages\_pytest\vendored_packages\pluggy.py", line 264, in __init__
+    self.result = func()
+  File "c:\python35-32\lib\site-packages\_pytest\vendored_packages\pluggy.py", line 596, in execute
+    res = hook_impl.function(*args)
+  File "c:\python35-32\lib\site-packages\_pytest\config.py", line 861, in pytest_cmdline_parse
+    self.parse(args)
+  File "c:\python35-32\lib\site-packages\_pytest\config.py", line 966, in parse
+    self._preparse(args, addopts=addopts)
+  File "c:\python35-32\lib\site-packages\_pytest\config.py", line 927, in _preparse
+    self.pluginmanager.load_setuptools_entrypoints("pytest11")
+  File "c:\python35-32\lib\site-packages\_pytest\vendored_packages\pluggy.py", line 501, in load_setuptools_entrypoints
+    plugin = ep.load()
+  File "c:\python35-32\lib\site-packages\pkg_resources\__init__.py", line 2201, in load
+    self.require(*args, **kwargs)
+  File "c:\python35-32\lib\site-packages\pkg_resources\__init__.py", line 2218, in require
+    items = working_set.resolve(reqs, env, installer)
+  File "c:\python35-32\lib\site-packages\pkg_resources\__init__.py", line 835, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.VersionConflict: (pytest 2.9.1 (c:\python35-32\lib\site-packages), Requirement.parse('pytest<=2.9.0,>=2.7.3'))
+
+C:\Users\„ ­Ё«\.jenkins\jobs\addressbook_tests_bdd1\workspace>exit 1 
+Build step 'Virtualenv Builder' marked build as failure
+[workspace] $ C:\Users\Данил\.jenkins\tools\ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation\ru.yandex.qatools.allure_allure-jenkins-plugin_2.10\bin\allure.bat generate "C:\Users\Данил\.jenkins\jobs\addressbook_tests_bdd1\workspace\allure-reports" "C:\Users\Данил\.jenkins\jobs\addressbook_tests_bdd1\workspace\allure3296118648198708055.tmp\environment" -o "C:\Users\Данил\.jenkins\jobs\addressbook_tests_bdd1\workspace\allure3296118648198708055.tmp\allure-report"
+Command aborted due to exception {}.
+ru.yandex.qatools.allure.command.AllureCommandException: Report directory <C:\Users\Данил\.jenkins\jobs\addressbook_tests_bdd1\workspace\allure-reports> not found.
+	at ru.yandex.qatools.allure.command.ReportGenerate.validateResultsDirectories(ReportGenerate.java:59)
+	at ru.yandex.qatools.allure.command.ReportGenerate.runUnsafe(ReportGenerate.java:46)
+	at ru.yandex.qatools.allure.command.AbstractCommand.run(AbstractCommand.java:52)
+	at ru.yandex.qatools.allure.CommandLine.main(CommandLine.java:46)
+Finished: FAILURE
