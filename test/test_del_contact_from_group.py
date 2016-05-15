@@ -1,12 +1,10 @@
 from model.contact import Contact
 from model.group import Group
 import random
-from fixture.orm import ORMFixture
 
-orm=ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
 
-def test_del_contact_from_group(app, db):
-    list_group_add_to=app.contact.get_group_list_from_dd()
+def test_del_contact_from_group(app, db, orm):
+    list_group_add_to=db.get_group_list()
     group=random.choice(list_group_add_to)
     old_contacts_in_group=orm.get_contacts_in_group_by_name(Group(name=group.name))
     if len(old_contacts_in_group) == 0:
