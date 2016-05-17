@@ -1,9 +1,9 @@
-pytest_bdd
+pytest-bdd
 selenium
 jsonpickle
 pony
 pymysql
 --allow-external mysql-connector-python
-C:\Users\Данил\Downloads\mysql-connector-python-2.0.4.zip
+mysql-connector-python-2.0.4.zip
 lxml-3.6.0-cp35-cp35m-win32.whl
 pytest-allure-adaptor
