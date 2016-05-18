@@ -1,5 +1,4 @@
 pytest-bdd
-uninstall pytest 
 selenium
 jsonpickle
 pony
